@@ -21,9 +21,6 @@ module.exports = function(grunt) {
                 'js/libs/acme/**/*.js'
             ]
         },
-        test: {
-            files: ['test/**/*.js']
-        },
         watch: {
             // Just for example:
             // testAdmin: {
@@ -45,32 +42,12 @@ module.exports = function(grunt) {
             // In this example, there's only one, but you can add as many as
             // you want. You can split them up into different groups here
             // ex: admin: [ 'test/admin.html' ]
-            all: [ 'test/**/!(test2).html' ],
-            
-            // Runs 'test/test2.html' with specified mocha options.
-            // This variant auto-includes 'mocha-helper.js' so you do not have
-            // to include it in your HTML spec file. Instead, you must add an
-            // environment check before you run `mocha.run` in your HTML.
-            test2: {
-
-                // Test files
-                src: [ 'test/test2.html' ],
-
-                // mocha options
-                mocha: {
-                    ignoreLeaks: false,
-                    grep: 'food'
-                },
-
-                // Indicates whether 'mocha.run()' should be executed in 
-                // 'mocha-helper.js'
-                run: true
-            }
+            all: [ 'test/**/*.html' ]
         }
     });
     
     // @DEBUG Remove this line in your grunt file, this is just for testing
-    grunt.loadTasks('../tasks');
+    grunt.loadTasks('./tasks');
 
     // Alias 'test' to 'mocha' so you can run `grunt test`
     task.registerTask('test', 'mocha');

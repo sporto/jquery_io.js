@@ -29,7 +29,9 @@
     "temporary": "~0.0.2"
   },
   "devDependencies": {
-    "grunt": "~0.3"
+    "grunt": "~0.3",
+    "mocha": "~1.8",
+    "chai": "~1.4.2"
   },
   "optionalDependencies": {
     "growl": "~1"
