@@ -48,7 +48,7 @@
 		// where "myplugin" is an instance of the plugin
 		// a public method. for demonstration purposes only - remove it!
 		plugin.foo_public_method = function() {
-
+			
 			// code goes here
 		}
 
