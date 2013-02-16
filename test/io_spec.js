@@ -1,15 +1,28 @@
 describe('io', function () {
 
 	var model = {
-			id: 1,
-			name: 'sam',
-			locs: [1, 2, 3],
-			foo: {
-				a: 1
+			user: {
+				id: 1,
+				name: 'Sam',
+				interests: [1, 2, 3],
+				address: {
+					number: '101'
+				}
 			}
 		};
-		var modelAsQuery = 'id=1&name=sam&locs%5B%5D=1&locs%5B%5D=2&locs%5B%5D=3&foo%5Ba%5D=1';
-		var modelAsJson = '{"id":1,"name":"sam","locs":[1,2,3],"foo":{"a":1}}';
+	var modelWithString = {
+			user: {
+				id: '1',
+				name: 'Sam',
+				interests: ['1', '2', '3'],
+				address: {
+					number: '101'
+				}
+			}
+		};
+	var modelAsQuery = 'user%5Bid%5D=1&user%5Bname%5D=Sam&user%5Binterests%5D%5B%5D=1&user%5Binterests%5D%5B%5D=2&user%5Binterests%5D%5B%5D=3&user%5Baddress%5D%5Bnumber%5D=101';
+	var modelAsJson = '{"user":{"id":1,"name":"Sam","interests":[1,2,3],"address":{"number":"101"}}}';
+	var modelAsJsonWithString = '{"user":{"id":"1","name":"Sam","interests":["1","2","3"],"address":{"number":"101"}}}';
 
 	// beforeEach(function () {
 
@@ -30,7 +43,7 @@ describe('io', function () {
 		describe('.object', function () {
 			it('returns an object', function () {
 				var res = asQuery.object();
-				expect(res).to.eq(model);
+				expect(res).to.eql(modelWithString);
 			});
 		});
 
@@ -44,7 +57,7 @@ describe('io', function () {
 		describe('.json', function () {
 			it('returns a json string', function () {
 				var res = asQuery.json();
-				expect(res).to.eq(modelAsJson);
+				expect(res).to.eq(modelAsJsonWithString);
 			});
 		});
 
@@ -61,21 +74,21 @@ describe('io', function () {
 		describe('.object', function () {
 			it('returns an object', function() {
 				var res = asForm.object();
-				expect(res).to.eq({user: { first_name: 'Sam'}});
+				expect(res).to.eql(modelWithString);
 			});
 		});
 
 		describe('.query', function () {
 			it('it returns a query', function() {
 				var res = asForm.query();
-				expect(res).to.eq('user%5Bfirst_name%5D=Sam&user%5Blast_name%5D=Sample');
+				expect(res).to.eq(modelAsQuery);
 			});
 		});
 
 		describe('.json', function () {
 			it('returns json', function() {
 				var res = asForm.json();
-				expect(res).to.eq("{'user': { 'first_name': 'Sam'}}");
+				expect(res).to.eq(modelAsJsonWithString);
 			});
 		});
 

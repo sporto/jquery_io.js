@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Example Mocha Test</title>
+    <title>Test</title>
     <link rel="stylesheet" href="../node_modules/mocha/mocha.css" type="text/css" charset="utf-8" />
 </head>
 <body>
@@ -13,7 +13,10 @@
     <script src="../node_modules/mocha/mocha.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
         // This will be overridden by mocha-helper if you run with grunt
-        mocha.setup('bdd');
+        mocha.setup({
+        	ui: 'bdd',
+        	globals: ['LiveReload', 'getInterface']
+        });
     </script>
     
     <!--
@@ -50,8 +53,12 @@
     </script>
 
    	<form action="">
-   		<input type="" name="user[first_name]" value="Sam" />
-   		<input type="" name="user[last_name]" value="Sample" />
+   		<input type="text" name="user[id]" value="1" />
+   		<input type="text" name="user[name]" value="Sam" />
+   		<input type="checkbox" name="user[interests][]" value="1" checked='checked' />
+   		<input type="checkbox" name="user[interests][]" value="2" checked='checked' />
+   		<input type="checkbox" name="user[interests][]" value="3" checked='checked' />
+   		<input type="text" name="user[address][number]" value="101" />
    	</form>
 </body>
 </html>
