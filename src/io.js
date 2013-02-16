@@ -228,7 +228,11 @@
 
 		function makeInstanceFactory(kind) {
 			return function (source) {
-				return instance()[kind](source);
+				if (source) {
+					return instance()[kind](source);
+				} else {
+					throw new Error("You must pass a source");
+				}
 			};
 		}
 

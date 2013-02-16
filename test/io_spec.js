@@ -34,8 +34,12 @@ describe('io', function () {
 
 	describe('.query', function () {
 
-		it('responds to query', function() {
-			expect(io.query).to.be.a('function');
+		it('responds to query', function () {
+			expect(io).to.respondTo('query');
+		});
+
+		it('throws if no argumets passed', function () {
+			expect(io.query).to.throw(Error);
 		});
 
 		var asQuery = io.query(modelAsQuery);
@@ -64,6 +68,14 @@ describe('io', function () {
 	});
 
 	describe('.form', function() {
+
+		it('responds to form', function () {
+			expect(io).to.respondTo('form');
+		});
+
+		it('throws if no argumets passed', function () {
+			expect(io.form).to.throw(Error);
+		});
 
 		var asForm = io.form('form');
 
@@ -96,6 +108,14 @@ describe('io', function () {
 
 	describe('.object', function() {
 
+		it('responds to form', function () {
+			expect(io).to.respondTo('object');
+		});
+
+		it('throws if no argumets passed', function () {
+			expect(io.object).to.throw(Error);
+		});
+
 		it('responds to .object', function() {
 			expect(io.object).to.be.a('function');
 		});
@@ -127,8 +147,12 @@ describe('io', function () {
 
 	describe('.json', function () {
 
-		it('responds to .json', function() {
-			expect(io.json).to.be.a('function');
+		it('responds to form', function () {
+			expect(io).to.respondTo('json');
+		});
+
+		it('throws if no argumets passed', function () {
+			expect(io.json).to.throw(Error);
 		});
 
 		var asJson = io.json(modelAsJson);
