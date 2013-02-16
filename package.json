@@ -1,42 +1,30 @@
 {
-  "name": "grunt-mocha",
-  "description": "Grunt task for running Mocha specs",
-  "version": "0.1.7",
-  "homepage": "https://github.com/kmiyashiro/grunt-mocha",
+  "name": "io",
+  "description": "",
+  "version": "0.1.0",
+  "homepage": "",
   "author": {
-    "name": "Kelly Miyashiro",
-    "email": "miyashiro.kelly@gmail.com",
-    "url": "http://non-diligent.com"
+    "name": "Sebastian Porto",
+    "email": "sebasporto@gmail.com",
+    "url": ""
   },
+
   "repository": {
     "type": "git",
     "url": "git://github.com/kmiyashiro/grunt-mocha.git"
   },
-  "bugs": {
-    "url": "https://github.com/kmiyashiro/grunt-mocha/issues"
-  },
+
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/kmiyashiro/grunt-mocha/blob/master/LICENSE-MIT"
     }
   ],
+
   "main": "grunt.js",
-  "engines": {
-    "node": "*"
-  },
-  "dependencies": {
-    "temporary": "~0.0.2"
-  },
+  
   "devDependencies": {
-    "grunt": "~0.3",
-    "mocha": "~1.8",
-    "chai": "~1.4.2"
-  },
-  "optionalDependencies": {
-    "growl": "~1"
-  },
-  "keywords": [
-    "gruntplugin"
-  ]
+  	"chai": "~1.4",
+  	"grunt-mocha": "~0.1"
+  }
 }
