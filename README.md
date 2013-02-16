@@ -1,11 +1,11 @@
-IO
+jQuery IO
 ===
 
-An utility for marshalling data from / to:
+A jQuery plug-in for transforming data between different formats:
 
-- forms
-- json
-- object
+- JavaScript objects
+- html forms
+- json strings
 - query strings
 
 Convert a form

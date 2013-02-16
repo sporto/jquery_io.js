@@ -1,4 +1,7 @@
 /*global config:true, task:true*/
+
+//https://github.com/jstayton/grunt-jquery-json
+
 module.exports = function(grunt) {
 	// Grunt utilities.
 	var task = grunt.task;
@@ -43,13 +46,20 @@ module.exports = function(grunt) {
 				dest: 'dist/io.min.js'
 			}
 		},
+		pkg: '<json:package.json>',
+		jqueryjson: {
+			dependencies: {
+				jquery: '>=1.4.3'
+			}
+		}
 	});
 
 	// Alias 'test' to 'mocha' so you can run `grunt test`
 	task.registerTask('test', 'mocha');
 
 	// Default task.
-	task.registerTask('default', 'lint mocha min');
+	task.registerTask('default', 'lint mocha min jquery-json');
 
 	grunt.loadNpmTasks('grunt-mocha');
+	grunt.loadNpmTasks('grunt-jquery-json');
 };
