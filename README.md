@@ -102,7 +102,7 @@ Convert JavaScript Objects
 		}
 	}
 
-	io.object().json();
+	io.object(source).json();
 
 	'{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}'
 
