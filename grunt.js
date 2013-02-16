@@ -31,7 +31,8 @@ module.exports = function(grunt) {
 			}
 		},
 		lint: {
-			files: ['test/**/*.js', 'src/**/*.js']
+			//files: ['test/**/*.js', 'src/**/*.js']
+			files: ['src/**/*.js']
 		},
 		mocha: {
 			// runs all html files (except test2.html) in the test dir
@@ -58,7 +59,7 @@ module.exports = function(grunt) {
 	task.registerTask('test', 'mocha');
 
 	// Default task.
-	task.registerTask('default', 'lint mocha min jquery-json');
+	task.registerTask('default', 'lint min jquery-json');
 
 	grunt.loadNpmTasks('grunt-mocha');
 	grunt.loadNpmTasks('grunt-jquery-json');
