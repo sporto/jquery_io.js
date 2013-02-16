@@ -43,8 +43,8 @@ module.exports = function(grunt) {
 		},
 		min: {
 			dist: {
-				src: ['src/io.js'],
-				dest: 'dist/io.min.js'
+				src: ['src/jquery-io.js'],
+				dest: 'dist/jquery-io.min.js'
 			}
 		},
 		pkg: '<json:package.json>',

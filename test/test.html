@@ -9,6 +9,15 @@
     <!-- Required for browser reporter -->
     <div id="mocha"></div>
     
+    <form action="">
+   		<input type="text" name="user[id]" value="1" />
+   		<input type="text" name="user[name]" value="Sam" />
+   		<input type="checkbox" name="user[interests][]" value="1" checked='checked' />
+   		<input type="checkbox" name="user[interests][]" value="2" checked='checked' />
+   		<input type="checkbox" name="user[interests][]" value="3" checked='checked' />
+   		<input type="text" name="user[address][number]" value="101" />
+   	</form>
+    
     <!-- mocha -->
     <script src="../node_modules/mocha/mocha.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
@@ -40,23 +49,20 @@
     <script src="../lib/jquery.min.js"></script>
     
     <!-- Source code to test -->
-    <script src="../src/io.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../src/jquery-io.js" type="text/javascript" charset="utf-8"></script>
     
     <!-- Spec files -->
-    <script src="io_spec.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jquery-io_spec.js" type="text/javascript" charset="utf-8"></script>
 
-    <!-- run mocha -->
+
+   	
+   	
+   	    <!-- run mocha -->
     <script type="text/javascript" charset="utf-8">
+    	//$(function () {
+    		//console.log($('form'));
         mocha.run();
+    	//})
     </script>
-
-   	<form action="">
-   		<input type="text" name="user[id]" value="1" />
-   		<input type="text" name="user[name]" value="Sam" />
-   		<input type="checkbox" name="user[interests][]" value="1" checked='checked' />
-   		<input type="checkbox" name="user[interests][]" value="2" checked='checked' />
-   		<input type="checkbox" name="user[interests][]" value="3" checked='checked' />
-   		<input type="text" name="user[address][number]" value="101" />
-   	</form>
 </body>
 </html>

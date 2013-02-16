@@ -13,7 +13,7 @@ Convert a form
 
 ### To a JavaScript object
 
-	io.form('.myForm').object();
+	io.form($('form')).object();
 
 	{
 		user: {
@@ -24,13 +24,13 @@ Convert a form
 
 ### To a query string
 
-	io.form('.myForm').query();
+	io.form($('form')).query();
 
 	'user%5Bname%5D=Sam&user%5Binterests%5D%5B%5D=1&user%5Binterests%5D%5B%5D=2'
 
 ### To a json string
 
-	io.form('.form').json();
+	io.form($('form')).json();
 
 	'{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}'
 
