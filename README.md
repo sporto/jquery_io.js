@@ -13,48 +13,98 @@ Convert a form
 
 ### To a JavaScript object
 
-	io.form('.form').object();
+	io.form('.myForm').object();
+
+	{
+		user: {
+			name: 'Sam',
+			interests: ['1', '2']
+		}
+	}
 
 ### To a query string
 
-	io.form('.form').query();
+	io.form('.myForm').query();
+
+	'user%5Bname%5D=Sam&user%5Binterests%5D%5B%5D=1&user%5Binterests%5D%5B%5D=2'
 
 ### To a json string
 
 	io.form('.form').json();
+
+	'{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}'
 
 Convert Query strings
 ------------
 
 ### To a JavaScript object
 
-	io.query('').object();
+	var source = 'user%5Bname%5D=Sam&user%5Binterests%5D%5B%5D=1&user%5Binterests%5D%5B%5D=2';
+	io.query(source).object();
+
+	{
+		user: {
+			name: 'Sam',
+			interests: ['1', '2']
+		}
+	}
 
 ### To a json string
 
-	io.query('').json();
+	var source = 'user%5Bname%5D=Sam&user%5Binterests%5D%5B%5D=1&user%5Binterests%5D%5B%5D=2';
+	io.query(source).json();
+
+	'{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}'
 
 Convert Json
 --------
 
 ### To a JS object
 
-	io.json('').object();
+	var source = '{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}';
+	io.json(source).object();
+
+	{
+		user: {
+			name: 'Sam',
+			interests: ['1', '2']
+		}
+	}
 
 ### To a query string
 
-	io.json('').query();
+	var source = '{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}';
+	io.json(source).query();
+
+	'user%5Bname%5D=Sam&user%5Binterests%5D%5B%5D=1&user%5Binterests%5D%5B%5D=2'
 
 Convert JavaScript Objects
 -----------
 
 ### To a query string
 
-	io.object().query();
+	var source = 	{
+		user: {
+			name: 'Sam',
+			interests: ['1', '2']
+		}
+	}
+	io.object(source).query();
+
+	'user%5Bname%5D=Sam&user%5Binterests%5D%5B%5D=1&user%5Binterests%5D%5B%5D=2'
 
 ### To a json string
 
+	var source = 	{
+		user: {
+			name: 'Sam',
+			interests: ['1', '2']
+		}
+	}
+
 	io.object().json();
+
+	'{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}'
 
 Limits
 --------
