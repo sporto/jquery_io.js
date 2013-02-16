@@ -22,15 +22,6 @@ module.exports = function(grunt) {
 			// ]
 		},
 		watch: {
-			// Just for example:
-			// testAdmin: {
-			//     files: [
-			//         '<config:options.testFiles>',
-			//         'test/admin/specs/*.js'
-			//     ],
-			//     tasks: 'mocha'
-			// },
-			// If you want to watch files and run tests automatically on change
 			test: {
 				files: ['src/**/*.js', 'test/**/*.js'],
 				tasks: 'mocha'
@@ -54,15 +45,11 @@ module.exports = function(grunt) {
 		},
 	});
 
-	// @DEBUG Remove this line in your grunt file, this is just for testing
-	//grunt.loadTasks('./tasks');
-
 	// Alias 'test' to 'mocha' so you can run `grunt test`
 	task.registerTask('test', 'mocha');
 
 	// Default task.
 	task.registerTask('default', 'lint mocha min');
 
-	// run `npm install grunt-mocha` in project root dir and uncomment this
 	grunt.loadNpmTasks('grunt-mocha');
 };

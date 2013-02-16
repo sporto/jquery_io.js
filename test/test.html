@@ -27,7 +27,7 @@
          Unfortunately, I can't figure out a reliable way to inject the grunt
          runner after mocha.js but before mocha.run in PhantomJS
     -->
-    <script src="../tasks/mocha/mocha-helper.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../node_modules/grunt-mocha/task/mocha/mocha-helper.js" type="text/javascript" charset="utf-8"></script>
     
     <!-- Include your assertion lib of choice -->
     <script src="../node_modules/chai/chai.js" type="text/javascript" charset="utf-8"></script>
@@ -47,9 +47,7 @@
 
     <!-- run mocha -->
     <script type="text/javascript" charset="utf-8">
-        mocha
-            // .globals(['Wombat', 'Apple']) // acceptable globals
-            .run();
+        mocha.run();
     </script>
 
    	<form action="">

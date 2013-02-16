@@ -8,23 +8,23 @@
     "email": "sebasporto@gmail.com",
     "url": ""
   },
-
   "repository": {
     "type": "git",
     "url": "git://github.com/kmiyashiro/grunt-mocha.git"
   },
-
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/kmiyashiro/grunt-mocha/blob/master/LICENSE-MIT"
     }
   ],
-
   "main": "grunt.js",
-  
   "devDependencies": {
-  	"chai": "~1.4",
-  	"grunt-mocha": "~0.1"
+    "mocha": "~1",
+    "chai": "~1.4",
+    "grunt-mocha": "~0.1",
+    "temporary": "0.0.5"
+  },
+  "dependencies": {
   }
 }
