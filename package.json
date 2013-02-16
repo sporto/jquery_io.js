@@ -3,7 +3,7 @@
   "title": "io",
   "description": "A jQuery plug-in for transforming data between different formats",
   "keywords": ["serialize", "json", "marshall", "convert", "data", "form"],
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://github.com/sporto/jquery_io.js",
   "author": {
     "name": "Sebastian Porto",
