@@ -28,6 +28,10 @@ Convert a form
 
 	'user%5Bname%5D=Sam&user%5Binterests%5D%5B%5D=1&user%5Binterests%5D%5B%5D=2'
 
+	// this is equivalent to:
+
+	$('form').serialize();
+
 ### To a json string
 
 	$.io.form($('form')).json();
@@ -71,6 +75,10 @@ Convert Json
 		}
 	}
 
+	// this is equivalent to:
+	JSON.parse(source)
+
+
 ### To a query string
 
 	var source = '{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}';
@@ -105,6 +113,9 @@ Convert JavaScript Objects
 	$.io.object(source).json();
 
 	'{"user":{"id":"1","name":"Sam","interests":["1","2","3"]}}'
+
+	// this is equivalent to:
+	JSON.stringify(source);
 
 Limits
 --------
