@@ -117,6 +117,11 @@ Testing
 	npm init
 	grunt
 
+Acknowledgements
+-------------
+
+- Bitovi (CanJS) - for some of the code I 'borrowed' for converting forms into objects.
+
 License
 -------
 
