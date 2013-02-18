@@ -109,7 +109,7 @@ Convert JavaScript Objects
 Limits
 --------
 
-Given a query like a=101, io cannot safely figure out if 101 is a number or a string, so it will just return a string if converted to an object. This is because a string like 10e2 would also be a valid number, so it may end making uninteted conversion.
+Given a query like &a=101, io at the moment doesn't try to figure out if 101 is a number or a string, so it will just return a string if converted to an object. e.g. {a: '101'}
 
 Testing
 -------
