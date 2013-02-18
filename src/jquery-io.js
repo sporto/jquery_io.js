@@ -249,6 +249,6 @@
 		return self;
 	}());
 
-	root.io = io;
+	jQuery.io = io;
 
 }(this, jQuery));
