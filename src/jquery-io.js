@@ -1,9 +1,10 @@
-;(function(root, jQuery) {
+/*!
+jquery-io
+https://github.com/sporto/jquery_io.js
+@version 1.0.1
+*/
 
-	// form
-	// query
-	// object
-	// json
+;(function(root, jQuery) {
 
 	if (jQuery === undefined) throw new Error('jQuery is required');
 

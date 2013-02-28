@@ -1,7 +1,5 @@
 /*global config:true, task:true*/
 
-//https://github.com/jstayton/grunt-jquery-json
-
 module.exports = function(grunt) {
 	// Grunt utilities.
 	var task = grunt.task;
